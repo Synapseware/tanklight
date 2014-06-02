@@ -1,0 +1,9 @@
+programming device...
+	avrdude -c usbtiny -p t13 -B 4 -U flash:w:.\tanklights.hex
+
+reading fuses...
+	avrdude -c usbtiny -p t13 -B 4 -U hfuse:r:.\high.txt:h -U lfuse:r:.\low.txt:h
+
+writing fuses...
+	avrdude -c usbtiny -p t13 -B 8 -U lfuse:w:0x1a:m -U hfuse:w:0xff:m
+
