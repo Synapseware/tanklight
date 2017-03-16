@@ -11,3 +11,16 @@ Read more about charlieplexing here: https://en.wikipedia.org/wiki/Charlieplexin
 
 The lighting effects are accomplished by very fast switching of the LED matrix, so that persistence of vision plays a key role in the apparent light levels of the LEDs.
 
+## building
+The project has a simple Makefile.  It is currently configured to compiled under Linux only (but could be easily modified for other operating systems).  You will need to install AVRA, which is the open source equivalent of the Atmel AVR Assembler, avrasm.exe, that is included with AVR Studio for Windows.
+
+### AVRA
+Avra can also be installed easily on Linux:  `apt install -y avra` for Debian based systems.  The AVRA project home is here: http://avra.sourceforge.net/
+
+### Atmel AVR Assembler
+http://www.atmel.com/webdoc/avrassembler/index.html
+
+
+### Other notes
+The main idea with this project is not to build yet another LED blinking hello-world type of application, but is more a demonstration of what you can build using assembly and very lower powered micro-controllers.  Current code size is 640 bytes, or 320 words.  The timers on the ATTiny13 are used to advance or cycle through the lighting pattern, while the main charlieplexing display driver code is left to run at full speed.
+
